@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  reverse-proxy:
+    build: ./nginx
+    container_name: reverse-proxy
+    ports:
+      - 3000:80
+  webapp1:
+    build: ./webapp
+    container_name: webapp1
+    environment:
+      - KEY=key1
+  webapp2:
+    build: ./webapp
+    container_name: webapp2
+    environment:
+      - KEY=key2
+  webapp3:
+    build: ./webapp
+    container_name: webapp3
+    environment:
+      - KEY=key3
