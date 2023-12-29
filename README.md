@@ -1,6 +1,15 @@
 # nginx-load-balance
 nginx ทำ load balance ด้วย round robin
 
+load balancing algorithms
+1. round robin
+2. sticky round robin
+3. least time
+4. least connections
+5. ip/url hash
+6. weighted round robin
+
+
 run docker compose
 
     $ docker compose up -d --build
@@ -22,3 +31,4 @@ website: [http://webapp.local:3000/](http://webapp.local:3000/)
 
 note:
 ตอนแรกจะทำ sticky round robin แต่พบว่า ต้องใช้ nginx ที่เป็น version nginx (>=1.5.7) ขึ้นไป ซึ่งนั้นจะเป็นแบบ commercial subscription
+[http://nginx.org/en/docs/http/ngx_http_upstream_module.html#sticky](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#sticky)
